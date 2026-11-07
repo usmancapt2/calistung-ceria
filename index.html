@@ -99,6 +99,102 @@ input[type=text],select{width:100%;font:inherit;font-size:18px;padding:10px 12px
 .fin{margin-top:40px}.fin h1{color:var(--tx)}
 .pop{position:fixed;left:50%;top:40%;transform:translate(-50%,-50%) scale(0);font-size:90px;z-index:40;pointer-events:none}.pop.go{animation:pp .9s ease-out}
 @keyframes pp{0%{transform:translate(-50%,-50%) scale(0)}40%{transform:translate(-50%,-60%) scale(1.2)}100%{transform:translate(-50%,-90%) scale(1);opacity:0}}
+/* ===== TEMA CERIA ===== */
+#app{background:linear-gradient(#7fd6ff 0,#d4f3ff 260px,#c8f0a4 100%)}
+.pill{background:#fff6c9;color:#b45309;border:3px solid #ffd23f;box-shadow:0 3px 0 #e0a100;font-size:18px;padding:5px 12px}
+.back{background:#fff;border:3px solid #cfe9ff;box-shadow:0 4px 0 #9ccbf2;color:#1f5f99}
+.ttl{color:#2b2250}
+.avatar{border:4px solid #ffd23f;width:60px;height:60px;font-size:36px;box-shadow:0 4px 0 #e0a100}
+.who b{color:#2b2250}.who span{color:#2f6f9a}
+.lock{border:3px solid #e6d5ff;box-shadow:0 3px 0 #bfa3f0}
+.hero{padding:10px 0 2px;color:#2f6f9a}
+.logo{font-size:46px;font-weight:800;line-height:1.05;display:flex;justify-content:center;text-shadow:0 3px 0 #fff,0 6px 0 #0002;transform:rotate(-2deg);margin-bottom:2px}
+.logo span{display:inline-block;animation:wv 2.6s ease-in-out infinite;animation-delay:calc(var(--i)*.12s)}
+@keyframes wv{0%,55%,100%{transform:translateY(0)}25%{transform:translateY(-9px)}}
+.grid2{gap:16px;padding:14px 0}
+.mb{border:5px solid #fff;border-radius:38px 24px 38px 24px;box-shadow:0 8px 0 rgba(0,0,0,.2);min-height:156px;font-size:26px;text-shadow:0 2px 0 #0003;position:relative}
+.mb:nth-child(2n){border-radius:24px 38px 24px 38px}
+.mb:active{transform:translateY(5px);box-shadow:0 3px 0 rgba(0,0,0,.2)}
+.mb .ic{width:84px;height:84px;border-radius:50%;background:#ffffff40;display:grid;place-items:center;font-size:50px;text-shadow:none}
+.c1{background:linear-gradient(160deg,#6be585,#1fa653)}
+.c2{background:linear-gradient(160deg,#ffb347,#f0701a)}
+.c3{background:linear-gradient(160deg,#6cc0ff,#2a75d6)}
+.c4{background:linear-gradient(160deg,#e08cf0,#a43fc4)}
+.wide{background:linear-gradient(#ffe066,#ffc83d);border:4px solid #fff;box-shadow:0 6px 0 #d4a912;font-size:22px;border-radius:28px}
+.card{border:4px solid #fff;box-shadow:0 5px 0 #a9d98f;border-radius:28px}
+.prog{height:18px;background:#fff;border:3px solid #fff;box-shadow:inset 0 0 0 2px #cfe8c8}
+.prog i{background:repeating-linear-gradient(45deg,#5ee07a 0 12px,#3ec95f 12px 24px);border-radius:8px}
+.deco{position:absolute;pointer-events:none;font-size:44px;opacity:.95;filter:drop-shadow(0 3px 0 #0002)}
+.cld{position:absolute;pointer-events:none;font-size:64px;opacity:.95;z-index:0}
+.top2,.hero,.grid2,.wide,.card{position:relative;z-index:1}
+/* soal */
+.card.q{border-color:#fff;box-shadow:0 6px 0 #9bd0f0;background:#fffdf5}
+.q h2{color:#2b2250;font-size:24px}
+.say{background:linear-gradient(#59b4ff,#2f86d6);border:3px solid #fff;box-shadow:0 5px 0 #1f64a8;font-size:20px}
+.opts .o{border-width:4px;border-radius:28px;box-shadow:0 6px 0 rgba(0,0,0,.15);transition:transform .1s}
+.opts .o:active{transform:translateY(4px);box-shadow:0 2px 0 rgba(0,0,0,.15)}
+.opts .o:nth-child(4n+1){background:#ffe3e3;border-color:#ff8787;color:#c92a2a}
+.opts .o:nth-child(4n+2){background:#fff3bf;border-color:#fcc419;color:#b35c00}
+.opts .o:nth-child(4n+3){background:#d3f9d8;border-color:#51cf66;color:#2b8a3e}
+.opts .o:nth-child(4n){background:#d0ebff;border-color:#4dabf7;color:#1864ab}
+.opts .o.ok{background:#8ce99a!important;border-color:#2b9d4a!important;color:#14532d!important}
+.opts .o.bad{background:#ffd8a8!important;border-color:#f08c00!important}
+.opts .o.hl{box-shadow:0 0 0 7px #51cf66aa,0 6px 0 rgba(0,0,0,.15)}
+.hint{border:3px dashed #ffd23f}
+.pad{border:4px solid #fff;box-shadow:0 5px 0 #b9c4ee,0 0 0 4px #ffd23f55}
+.btn{background:linear-gradient(#5ee07a,#2e9e4f);border:4px solid #fff;box-shadow:0 5px 0 #1f7438}
+.fin{background:linear-gradient(#fff7c2,#ffe3f1)}
+.cf{position:fixed;inset:0;pointer-events:none;z-index:50;overflow:hidden}
+.cf i{position:absolute;top:-20px;width:10px;height:16px;border-radius:3px;animation:fall linear forwards}
+@keyframes fall{to{transform:translate(var(--dx),115vh) rotate(720deg)}}
+/* jalur level berliku: satu layar, tema per pelajaran */
+#app.th-tulis{background:radial-gradient(1.5px 1.5px at 12% 8%,#fff,transparent),radial-gradient(2px 2px at 78% 14%,#fff,transparent),radial-gradient(1.5px 1.5px at 40% 30%,#ffe9a8,transparent),radial-gradient(2px 2px at 90% 45%,#fff,transparent),radial-gradient(1.5px 1.5px at 22% 60%,#fff,transparent),radial-gradient(2px 2px at 65% 72%,#ffe9a8,transparent),radial-gradient(1.5px 1.5px at 8% 88%,#fff,transparent),radial-gradient(2px 2px at 85% 92%,#fff,transparent),linear-gradient(#1a1058,#2c1a80 55%,#0b0630)}
+#app.th-hitung{background:linear-gradient(#8fe3ff,#35b0ee 45%,#0b72bd)}
+.th-tulis .ttl,.th-tulis .who b{color:#fff}
+.trk{--rw:38px;--nh:76px;position:relative;margin:12px -6px 0;height:calc(100dvh - 150px);min-height:500px;max-height:900px;border-radius:34px;overflow:hidden;border:5px solid #fff;box-shadow:0 6px 0 #7cc45a;
+ background:radial-gradient(circle at 12% 18%,#c5f29d 0 70px,transparent 71px),radial-gradient(circle at 90% 55%,#c5f29d 0 90px,transparent 91px),radial-gradient(circle at 10% 85%,#c5f29d 0 80px,transparent 81px),linear-gradient(#a6e873,#86d565)}
+.trk.k4{--rw:30px;--nh:68px}.trk.k2{--rw:46px;--nh:88px}
+.th-tulis .trk{border-color:#a99bff;box-shadow:0 6px 0 #07032a;background:radial-gradient(1.5px 1.5px at 20% 10%,#fff,transparent),radial-gradient(2px 2px at 70% 22%,#fff,transparent),radial-gradient(1.5px 1.5px at 35% 48%,#ffe9a8,transparent),radial-gradient(2px 2px at 88% 60%,#fff,transparent),radial-gradient(1.5px 1.5px at 12% 74%,#fff,transparent),radial-gradient(2px 2px at 60% 90%,#ffe9a8,transparent),radial-gradient(circle at 80% 15%,#6a4bd655 0 70px,transparent 71px),radial-gradient(circle at 15% 65%,#ff5fa233 0 90px,transparent 91px),linear-gradient(#241572,#0f0846)}
+.th-hitung .trk{border-color:#e8f9ff;box-shadow:0 6px 0 #0a5a96;background:radial-gradient(circle at 20% 12%,#ffffff33 0 45px,transparent 46px),radial-gradient(circle at 85% 62%,#ffffff22 0 80px,transparent 81px),linear-gradient(#66d0ff,#1d8fd8 65%,#f3d58f)}
+.trk svg{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1}
+.trk path{vector-effect:non-scaling-stroke;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.rd0{stroke:#7a4a1f;stroke-width:calc(var(--rw) + 12px)}
+.rd1{stroke:#f3cb8b;stroke-width:var(--rw)}
+.rd1.dn{stroke:#ffd23f}
+.rd2{stroke:#fff;stroke-opacity:.85;stroke-width:4px;stroke-dasharray:1 13}
+.th-tulis .rd0{stroke:#2a1a7a}.th-tulis .rd1{stroke:#7b63f0}.th-tulis .rd1.dn{stroke:#ffd23f}
+.th-hitung .rd0{stroke:#b9893a}.th-hitung .rd1{stroke:#f7e2a8}.th-hitung .rd1.dn{stroke:#ff9ec1}
+.dc{position:absolute;transform:translate(-50%,-50%);font-size:36px;pointer-events:none;z-index:2;filter:drop-shadow(0 3px 0 #0002)}
+.nd{position:absolute;transform:translate(-50%,calc(var(--nh)/-2));z-index:3;display:flex;flex-direction:column;align-items:center;width:104px}
+.k4 .nd{width:92px}
+.nb{width:var(--nh);height:var(--nh);border-radius:50%;border:6px solid #fff;background:radial-gradient(circle at 35% 28%,#fffb,var(--c) 62%);color:#fff;font-size:32px;font-weight:800;text-shadow:0 2px 0 #0004;box-shadow:0 6px 0 rgba(0,0,0,.28);display:grid;place-items:center;position:relative;padding:0}
+.k4 .nb{font-size:28px}
+.nb:active{transform:translateY(4px);box-shadow:0 2px 0 rgba(0,0,0,.28)}
+.nd.lk .nb{background:#d5d9e0;color:#8a93a3;font-size:26px;text-shadow:none}
+.nd.cur .nb{animation:pls 1.5s ease-in-out infinite}
+@keyframes pls{0%,100%{box-shadow:0 6px 0 rgba(0,0,0,.28),0 0 0 0 #ffd23f}50%{box-shadow:0 6px 0 rgba(0,0,0,.28),0 0 0 12px #ffd23f99}}
+.me{position:absolute;top:-46px;left:50%;transform:translateX(-50%);font-size:36px;animation:hop 1s ease-in-out infinite;pointer-events:none;z-index:4;filter:drop-shadow(0 3px 0 #0003)}
+@keyframes hop{50%{transform:translate(-50%,-8px)}}
+.ns{font-size:22px;line-height:1;height:26px;margin-top:3px;color:#ffb300;letter-spacing:1px;-webkit-text-stroke:1px #fff;text-shadow:0 2px 0 #fff}
+.nt{background:#fff;border-radius:14px;padding:2px 8px;font-size:12.5px;font-weight:700;line-height:1.15;color:#2b2250;text-align:center;box-shadow:0 3px 0 rgba(0,0,0,.18);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.nd.lk .nt{opacity:.8}
+.shk .nb{animation:sh .3s}
+.sgn{position:absolute;transform:translate(-50%,-50%);z-index:3;background:#ff6b6b;color:#fff;border:4px solid #fff;border-radius:16px;padding:0 12px;font-weight:800;font-size:17px;box-shadow:0 4px 0 #c92a2a;white-space:nowrap}
+.goal{position:absolute;transform:translate(-50%,-50%);z-index:3;font-size:60px;line-height:1;filter:drop-shadow(0 4px 0 #0003)}
+/* kartu soal bertema */
+.card.q,.card.fin{position:relative;overflow:hidden}
+.card.q>*,.card.fin>*{position:relative;z-index:1}
+.card.q>.qd,.card.fin>.qd{position:absolute;inset:0;z-index:0;pointer-events:none}
+.qd span{position:absolute;font-size:34px;opacity:.55;filter:drop-shadow(0 2px 0 #0002)}
+.card.q h2{margin-inline:30px}
+.th-baca .card.q,.th-baca .card.fin{background:radial-gradient(circle at 8% 100%,#d4f5b0 0 90px,transparent 91px),radial-gradient(circle at 100% 10%,#fff3b8 0 70px,transparent 71px),linear-gradient(#f7ffe9,#e2f7cc);border-color:#fff;box-shadow:0 6px 0 #86c85e}
+.th-tulis .card.q,.th-tulis .card.fin{--tx:#fff;color:#fff;border-color:#a99bff;box-shadow:0 6px 0 #07032a;background:radial-gradient(1.5px 1.5px at 15% 12%,#fff,transparent),radial-gradient(2px 2px at 80% 20%,#fff,transparent),radial-gradient(1.5px 1.5px at 30% 55%,#ffe9a8,transparent),radial-gradient(2px 2px at 90% 70%,#fff,transparent),radial-gradient(1.5px 1.5px at 10% 85%,#fff,transparent),radial-gradient(2px 2px at 60% 92%,#ffe9a8,transparent),linear-gradient(#3b2aa6,#1f1473)}
+.th-tulis .feedback{color:#fff!important}.th-tulis #pc{color:#8cf5b8!important}
+.th-tulis .qd span{opacity:.85}.th-tulis .q h2{color:#fff}
+.th-hitung .card.q,.th-hitung .card.fin{background:radial-gradient(circle at 10% 90%,#ffffffaa 0 22px,transparent 23px),radial-gradient(circle at 90% 25%,#ffffff88 0 30px,transparent 31px),radial-gradient(circle at 78% 85%,#ffffff88 0 14px,transparent 15px),linear-gradient(#e9f9ff,#b4e5ff);border-color:#fff;box-shadow:0 6px 0 #5fb4e6}
+.th-tulis .fin p{color:#d9d4ff}.th-tulis .fin .stars{text-shadow:0 0 12px #ffd23f}
+.fin .qd span{font-size:40px}
+@media (prefers-reduced-motion:reduce){.logo span,.nd.cur .nb,.me{animation:none}}
 </style>
 </head>
 <body>
@@ -212,7 +308,7 @@ const STK={baca:['🦁','🐯','🐼','🦊','🐨','🐸','🦄','🐙','🦋',
 const shelf=()=>Object.keys(STK).map(k=>STK[k].map((e,i)=>{const l=D[k].levels[i];return l&&star(k,l.id)?`<span>${e}</span>`:'<span class="no">❔</span>'}).join('')).join('');
 function setV(n){VO=speechSynthesis.getVoices().find(v=>v.name==n)||VO;try{localStorage.setItem('cal.voice',n)}catch(e){}}
 function ask(){const d=document.createElement('div');d.id='ov';d.innerHTML=`<div class="dlg"><div style="font-size:56px">🤔</div><h2>Mau berhenti dulu?</h2><button class="btn" onclick="this.closest('#ov').remove()">▶️ Lanjut main</button><br><button class="ghost" style="margin-top:12px" onclick="this.closest('#ov').remove();track(S.k)">🏠 Keluar</button></div>`;document.body.appendChild(d);say('Mau berhenti dulu?')}
-function abc(){const it=D.baca.levels[0].items;app.innerHTML=`<div class="top2"><button class="back" onclick="AP++;home()">← Beranda</button><b class="ttl">🔤 Abjad Ceria</b><div class="pill">⭐ ${total()}</div></div><div class="card q"><button class="btn" onclick="playA()">▶️ Putar semua</button><div class="big" id="ae" style="font-size:72px;min-height:90px"></div></div><div class="card"><div class="opts" style="grid-template-columns:repeat(4,1fr)">`+it.map((i,k)=>`<button class="o" id="a${k}" style="font-size:24px;min-height:64px" onclick="AP++;say('Huruf ${i.letter}',()=>say('${i.example}'));document.getElementById('ae').textContent='${i.emoji}'">${i.letter}${i.lower}</button>`).join('')+'</div></div>'}
+function abc(){app.className='';const it=D.baca.levels[0].items;app.innerHTML=`<div class="top2"><button class="back" onclick="AP++;home()">← Beranda</button><b class="ttl">🔤 Abjad Ceria</b><div class="pill">⭐ ${total()}</div></div><div class="card q"><button class="btn" onclick="playA()">▶️ Putar semua</button><div class="big" id="ae" style="font-size:72px;min-height:90px"></div></div><div class="card"><div class="opts" style="grid-template-columns:repeat(4,1fr)">`+it.map((i,k)=>`<button class="o" id="a${k}" style="font-size:24px;min-height:64px" onclick="AP++;say('Huruf ${i.letter}',()=>say('${i.example}'));document.getElementById('ae').textContent='${i.emoji}'">${i.letter}${i.lower}</button>`).join('')+'</div></div>'}
 function playA(){const it=D.baca.levels[0].items,id=++AP;let k=0;const nx=()=>{if(id!==AP||k>=it.length)return;const i=it[k],e=document.getElementById('a'+k);if(!e)return;document.querySelectorAll('.o.hl').forEach(x=>x.classList.remove('hl'));e.classList.add('hl');document.getElementById('ae').textContent=i.emoji;k++;say('Huruf '+i.letter,()=>say(i.example,nx))};nx()}
 function demo(st,hn,side,lw){const id=++DM,sg=st.filter(s=>s.length>1).map(s=>{let l=0;const c=[0];for(let i=1;i<s.length;i++){l+=Math.hypot(s[i][0]-s[i-1][0],s[i][1]-s[i-1][1]);c.push(l)}return{s,c,L:l}});if(!sg.length)return;
  let si=0,t0=null;const at=(g,d)=>{let i=1;while(i<g.c.length-1&&g.c[i]<d)i++;const k=Math.min(1,(d-g.c[i-1])/Math.max(1e-6,g.c[i]-g.c[i-1]));return[g.s[i-1][0]+(g.s[i][0]-g.s[i-1][0])*k,g.s[i-1][1]+(g.s[i][1]-g.s[i-1][1])*k]};
@@ -239,12 +335,12 @@ function gate(ok){const r=n=>Math.floor(Math.random()*n),a=3+r(7),b=3+r(7),s=a+b
  d.innerHTML=`<div class="modal"><h2>🔒 Khusus Orang Tua</h2><p>Jawab dulu: <b style="font-size:26px;color:var(--tx)">${a} + ${b} = ?</b></p><div class="rw">${o.map(x=>`<button class="btn" data-a="${x}">${x}</button>`).join('')}</div><div class="rw"><button class="mini" id="gc">Batal</button></div><div class="small" id="gmsg"></div></div>`;document.body.appendChild(d);
  d.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{if(+b.dataset.a===s){d.remove();ok()}else{d.querySelector('#gmsg').textContent='Belum tepat, coba lagi.';b.disabled=true;b.style.opacity=.3}});d.querySelector('#gc').onclick=()=>d.remove()}
 function gm(k){const g=GM.find(x=>x[0]==k);say(g[2]);k=='abc'?abc():track(k)}
-function home(){inP=false;const m=Math.floor((CF.daily[dk()]||0)/60),n=AS().filter(x=>star(x.k,x.l.id)).length;
- app.innerHTML=`<div class="top2"><div class="avatar">${esc(CF.av)}</div><div class="who"><b>Halo, ${esc(CF.name)}!</b><span>Ayo belajar sambil bermain</span></div><div class="pill">⭐ ${total()}</div><button class="lock" aria-label="Area orang tua" onclick="gate(parent)">🔒</button></div><div class="hero">Calistung Ceria 🌿<br><span class="small">Tanpa iklan, tanpa tautan keluar</span></div><div class="grid2">${GM.map(g=>`<button class="mb ${g[3]}" onclick="gm('${g[0]}')"><span class="ic">${g[1]}</span>${g[2]}</button>`).join('')}</div><button class="wide" onclick="stk()">🏆 Stiker Saya (${n}/${AS().length})</button><div class="card"><b>Waktu main hari ini:</b> ${m} menit dari batas ${CF.limit} menit<div class="prog"><i style="width:${Math.min(100,m/CF.limit*100)}%"></i></div></div><span class="leaf" style="top:80px;right:6px">🍃</span><span class="leaf" style="top:300px;left:4px">🌿</span>`}
-function stk(){app.innerHTML=`<div class="top2"><button class="back" onclick="home()">← Beranda</button><b class="ttl">Stiker Saya</b><div class="pill">⭐ ${total()}</div></div><div class="card"><div class="sks">`+AS().map(x=>{const u=star(x.k,x.l.id)>0;return `<div class="sk${u?'':' lockd'}" onclick="${u?`say('${esc(x.l.title).replace(/'/g,'')}')`:''}">${u?x.e:'🔒'}<small>${T[x.k].t} ${x.l.id}</small></div>`}).join('')+'</div></div>'}
+function home(){app.className='';inP=false;const m=Math.floor((CF.daily[dk()]||0)/60),n=AS().filter(x=>star(x.k,x.l.id)).length;
+ app.innerHTML=`<div class="top2"><div class="avatar">${esc(CF.av)}</div><div class="who"><b>Halo, ${esc(CF.name)}!</b><span>Ayo belajar sambil bermain</span></div><div class="pill">⭐ ${total()}</div><button class="lock" aria-label="Area orang tua" onclick="gate(parent)">🔒</button></div><div class="hero"><div class="logo" aria-label="Calistung Ceria">${[...'Calistung'].map((c,i)=>`<span style="color:${ORB[i]};--i:${i}">${c}</span>`).join('')}</div>Ceria 🌈<br><span class="small">Tanpa iklan, tanpa tautan keluar</span></div><div class="grid2">${GM.map(g=>`<button class="mb ${g[3]}" onclick="gm('${g[0]}')"><span class="ic">${g[1]}</span>${g[2]}</button>`).join('')}</div><button class="wide" onclick="stk()">🏆 Stiker Saya (${n}/${AS().length})</button><div class="card"><b>Waktu main hari ini:</b> ${m} menit dari batas ${CF.limit} menit<div class="prog"><i style="width:${Math.min(100,m/CF.limit*100)}%"></i></div></div><span class="cld" aria-hidden="true" style="top:6px;right:-12px">☁️</span><span class="cld" aria-hidden="true" style="top:150px;left:-18px;font-size:48px">☁️</span><span class="deco" aria-hidden="true" style="bottom:10px;left:8px">🌷</span><span class="deco" aria-hidden="true" style="bottom:6px;right:10px">🦋</span>`}
+function stk(){app.className='';app.innerHTML=`<div class="top2"><button class="back" onclick="home()">← Beranda</button><b class="ttl">Stiker Saya</b><div class="pill">⭐ ${total()}</div></div><div class="card"><div class="sks">`+AS().map(x=>{const u=star(x.k,x.l.id)>0;return `<div class="sk${u?'':' lockd'}" onclick="${u?`say('${esc(x.l.title).replace(/'/g,'')}')`:''}">${u?x.e:'🔒'}<small>${T[x.k].t} ${x.l.id}</small></div>`}).join('')+'</div></div>'}
 function pc(k,v){CF[k]=v;if(k=='mute')MUTE=v;if(k=='limit')RS=false;svc();parent()}
 function rz(y){if(y===1){P={};try{Object.keys(localStorage).filter(k=>k.startsWith('cal.')&&k!='cal.voice'&&k!='cal.rate').forEach(k=>localStorage.removeItem(k))}catch(e){}CF={name:'Adik',age:5,av:'🐯',limit:15,mute:false,open:false,hist:{},daily:{}};MUTE=false;svc();SS=0;CR=0;parent()}else{CR=y;parent()}}
-function parent(){inP=true;const vs=speechSynthesis.getVoices().filter(v=>/^id/i.test(v.lang)||/indonesia/i.test(v.name)),ks=Object.keys(CF.hist).sort(),H=k=>CF.hist[k],
+function parent(){app.className='';inP=true;const vs=speechSynthesis.getVoices().filter(v=>/^id/i.test(v.lang)||/indonesia/i.test(v.name)),ks=Object.keys(CF.hist).sort(),H=k=>CF.hist[k],
  good=ks.filter(k=>H(k).ok>=3&&H(k).ok/(H(k).ok+H(k).no)>=.75),bad=ks.filter(k=>H(k).no>=2&&H(k).no>=H(k).ok*.6),
  days=[6,5,4,3,2,1,0].map(i=>{const d=new Date(Date.now()-i*864e5);return[['Min','Sen','Sel','Rab','Kam','Jum','Sab'][d.getDay()],CF.daily[dk(d)]||0]}),mx=Math.max(60,...days.map(x=>x[1])),
  sg=(k,a,f)=>`<div class="seg">${a.map(v=>`<button class="${CF[k]===v?'on':''}" onclick="pc('${k}',${JSON.stringify(v).replace(/"/g,"'")})">${f?f(v):v}</button>`).join('')}</div>`,
@@ -257,13 +353,48 @@ function parent(){inP=true;const vs=speechSynthesis.getVoices().filter(v=>/^id/i
 <div class="card"><h3>Laporan Perkembangan</h3><p class="small">Total bintang: ⭐ ${total()}</p>${Object.keys(T).map(k=>`<div>${T[k].e} <b>${T[k].t}</b>: ${D[k].levels.filter(l=>star(k,l.id)).length}/${D[k].levels.length} level</div>`).join('')}<b style="display:block;margin-top:10px">Sudah dikuasai</b><div class="rep">${chips(good,'g')}</div><b style="display:block;margin-top:10px">Masih sering salah</b><div class="rep">${chips(bad,'r')}</div><b style="display:block;margin-top:10px">Waktu main 7 hari (menit)</b><div class="days">${days.map(x=>`<div><i style="height:${Math.max(2,x[1]/mx*80)}px"></i>${Math.round(x[1]/60)}<br>${x[0]}</div>`).join('')}</div></div>
 <div class="card"><h3>Saran untuk Orang Tua</h3>${tips.map(t=>`<div class="tip">💡 ${esc(t)}</div>`).join('')}</div>
 <div class="card"><h3>Data</h3>${CR?'<p><b>Yakin hapus semua data?</b> Bintang, stiker, dan laporan akan hilang.</p><div class="rw"><button class="mini red" onclick="rz(1)">Ya, hapus semua</button><button class="mini" onclick="rz(0)">Batal</button></div>':'<button class="mini red" onclick="rz(2)">Hapus semua data</button>'}</div>`}
+function confetti(n){if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)return;const c=['#ff6b6b','#ffd23f','#00c2a8','#9b5de5','#4dabf7','#ff7ab8'],w=document.createElement('div');w.className='cf';for(let i=0;i<n;i++){const s=document.createElement('i');s.style.cssText='left:'+Math.random()*100+'%;background:'+c[i%6]+';animation-delay:'+Math.random()*.4+'s;animation-duration:'+(1.4+Math.random()*1.2)+'s;--dx:'+((Math.random()-.5)*140)+'px';w.appendChild(s)}document.body.appendChild(w);setTimeout(()=>w.remove(),3200)}
+function lk(b){b.parentNode.classList.remove('shk');void b.offsetWidth;b.parentNode.classList.add('shk');say('Selesaikan level sebelumnya dulu ya')}
+const DEC={baca:['🌳','🌷','🍄','🦋','🌻','🐿️','🌲','🐞','🐝','🌼','🐇','🌿','🐦','🍎'],tulis:['🪐','🌙','☄️','🛸','⭐','🌠','👽','🚀','🌟','🛰️','✨','🌌','🔭','🌕'],hitung:['🐠','🐙','🐳','🐚','🦀','🐡','🐟','🦑','🐬','🦈','🌊','🐢','🦐','⭐']};
+function decorate(k,P,n){
+ const box=app.querySelector('.trk'),sv=box&&box.querySelector('svg');if(!box)return;
+ const W=box.clientWidth,H=box.clientHeight;if(!W||!H)return;
+ const rw=(parseFloat(getComputedStyle(box).getPropertyValue('--rw'))||38)/2+6+14,nh=parseFloat(getComputedStyle(box).getPropertyValue('--nh'))||76,rp=[];
+ sv.querySelectorAll('.rd1').forEach(p=>{const L=p.getTotalLength();for(let t=0;t<=L;t+=.7){const q=p.getPointAtLength(t);rp.push([q.x*W/100,q.y*H/100])}});
+ const R=P.map((p,i)=>{const cx=p[0]*W/100,cy=p[1]*H/100,g=i==n;return g?[cx-52,cx+52,cy-52,cy+52]:[cx-56,cx+56,cy-nh/2-(i==0?118:44),cy+nh/2+92]});
+ let s=[...k].reduce((a,c)=>(a*31+c.charCodeAt(0))>>>0,7);const rn=()=>(s=(s*1664525+1013904223)>>>0)/4294967296;
+ const C=[];for(let x=22;x<W-18;x+=22)for(let y=20;y<H-16;y+=22)C.push([x+(rn()-.5)*16,y+(rn()-.5)*16]);
+ C.sort(()=>rn()-.5);const ok=[];
+ for(const c of C){if(ok.length>=11)break;
+  if(R.some(r=>c[0]>r[0]&&c[0]<r[1]&&c[1]>r[2]&&c[1]<r[3]))continue;
+  if(rp.some(q=>Math.hypot(q[0]-c[0],q[1]-c[1])<rw))continue;
+  if(ok.some(o=>Math.hypot(o[0]-c[0],o[1]-c[1])<84))continue;
+  ok.push(c)}
+ box.insertAdjacentHTML('beforeend',ok.map((c,i)=>`<span class="dc" aria-hidden="true" style="left:${(c[0]/W*100).toFixed(2)}%;top:${(c[1]/H*100).toFixed(2)}%;font-size:${24+Math.floor(rn()*12)}px;transform:translate(-50%,-50%) rotate(${Math.round((rn()-.5)*30)}deg)">${DEC[k][i%DEC[k].length]}</span>`).join(''))}
+function qdeco(c,k){const pos=[[7,4],[93,4],[7,96],[93,96],[50,97],[50,3]],d=DEC[k];c.insertAdjacentHTML('beforeend','<div class="qd" aria-hidden="true">'+pos.map((p,i)=>`<span style="left:${p[0]}%;top:${p[1]}%;transform:translate(-50%,-50%) rotate(${(i*37%40)-20}deg)">${d[(i*2)%d.length]}</span>`).join('')+'</div>')}
+new MutationObserver(()=>{const m=/th-(\w+)/.exec(app.className),c=m&&app.querySelector('.card.q,.card.fin');if(c&&DEC[m[1]]&&!c.querySelector('.qd'))qdeco(c,m[1])}).observe(app,{childList:true});
 function track(k){
- const ls=D[k].levels;
- app.innerHTML=`<div class="top2"><button class="back" onclick="home()">← Beranda</button><b class="ttl">${T[k].e} ${T[k].t}</b><div class="pill">⭐ ${total()}</div></div><div class="list">`+ls.map((l,i)=>{const open=i==0||CF.open||star(k,ls[i-1].id)>0,s=star(k,l.id);return `<button class="row" ${open?'':'disabled'} onclick="start('${k}',${i})"><span class="orb" style="--c:${ORB[i%10]}">${open?l.id:'🔒'}</span><span><b>${esc(l.title)}</b><small>Usia ${esc(l.age)}</small></span><span class="st">${'★'.repeat(s)}</span></button>`}).join('')+'</div>'}
+ const ls=D[k].levels,n=ls.length,sl=n+1,cols=sl<=6?2:sl<=9?3:4,rows=Math.ceil(sl/cols),mx=cols==2?27:cols==3?19:13,
+ ry=r=>19+57*r/(rows-1),
+ P=[...Array(sl)].map((_,i)=>{const r=Math.floor(i/cols);let c=i%cols;if(r%2)c=cols-1-c;return[mx+(100-2*mx)*c/(cols-1),ry(r)+Math.sin(i*1.9)*2]}),
+ open=ls.map((l,i)=>i==0||CF.open||star(k,ls[i-1].id)>0),
+ done=ls.filter(l=>star(k,l.id)>0).length,
+ cur=ls.findIndex((l,i)=>open[i]&&!star(k,l.id)),
+ f=v=>v.toFixed(2),
+ seg=i=>{const a=P[Math.max(0,i-1)],b=P[i],c=P[i+1],d=P[Math.min(sl-1,i+2)];
+  return `M${f(b[0])} ${f(b[1])}C${f(b[0]+(c[0]-a[0])/6)} ${f(b[1]+(c[1]-a[1])/6)} ${f(c[0]-(d[0]-b[0])/6)} ${f(c[1]-(d[1]-b[1])/6)} ${f(c[0])} ${f(c[1])}`},
+ segs=ls.map((l,i)=>({d:seg(i),dn:star(k,l.id)>0})),
+ pc=p=>`left:${f(p[0])}%;top:${f(p[1])}%`;
+ app.className='th-'+k;
+ app.innerHTML=`<div class="top2"><button class="back" onclick="home()">← Beranda</button><b class="ttl">${T[k].e} ${T[k].t}</b><div class="pill">⭐ ${total()}</div></div><div class="prog" aria-label="${done} dari ${n} level selesai"><i style="width:${Math.round(done/n*100)}%"></i></div>
+<div class="trk k${cols}"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${segs.map(s=>`<path class="rd0" d="${s.d}"/>`).join('')}${segs.map(s=>`<path class="rd1${s.dn?' dn':''}" d="${s.d}"/>`).join('')}${segs.map(s=>`<path class="rd2" d="${s.d}"/>`).join('')}</svg>`+
+ `<div class="sgn" style="${pc([P[0][0],P[0][1]-17])}">Mulai!</div><div class="goal" aria-hidden="true" style="${pc(P[n])}">${done==n?'🏆':'🏁'}</div>`+
+ ls.map((l,i)=>{const s=star(k,l.id),o=open[i];return `<div class="nd${o?'':' lk'}${i==cur?' cur':''}" style="${pc(P[i])};--c:${ORB[i%10]}">${i==cur?`<span class="me" aria-hidden="true">${esc(CF.av)}</span>`:''}<button class="nb" ${o?`onclick="start('${k}',${i})"`:`aria-disabled="true" onclick="lk(this)"`} aria-label="Level ${l.id}: ${esc(l.title)}">${o?l.id:'🔒'}</button><div class="ns" aria-hidden="true">${o?'★'.repeat(s)+'☆'.repeat(3-s):''}</div><div class="nt">${esc(l.title)}</div></div>`}).join('')+'</div>';decorate(k,P,n)}
+
 function start(k,i){const L=D[k].levels[i];S={k,L,q:sess(k,L),i:0,m:0};step()}
 const fbk=(t,ok)=>{const f=document.getElementById('fb');if(f){f.textContent=t;f.style.color=ok?'#2e9e4f':'#c27410'}};
-function pop(){const p=document.createElement('div');p.className='pop go';p.textContent='⭐';document.body.appendChild(p);setTimeout(()=>p.remove(),900)}
-function bar(){return `<div class="top2"><button class="back" onclick="ask()">← Beranda</button><b class="ttl">${T[S.k].e} ${T[S.k].t} · Level ${S.L.id}</b><div class="pill">⭐ ${total()}</div></div><div class="prog"><i style="width:${Math.round(S.i/Math.max(1,S.q.length)*100)}%"></i></div>`}
+function pop(){confetti(14);const p=document.createElement('div');p.className='pop go';p.textContent='⭐';document.body.appendChild(p);setTimeout(()=>p.remove(),900)}
+function bar(){app.className='th-'+S.k;return `<div class="top2"><button class="back" onclick="ask()">← Beranda</button><b class="ttl">${T[S.k].e} ${T[S.k].t} · Level ${S.L.id}</b><div class="pill">⭐ ${total()}</div></div><div class="prog"><i style="width:${Math.round(S.i/Math.max(1,S.q.length)*100)}%"></i></div>`}
 // Soal Baca/Hitung: kalimat petunjuk ikut dibacakan. "Dengar, ..." dibaca sebelum isi soal; petunjuk lain (mis. "Berapa hasilnya?") dibaca setelah soal.
 function sayQ(){const q=S.q[S.i],a=q.p,b=q.say,nz=x=>String(x).toLowerCase().replace(/[^a-z0-9 ]/g,'').trim();
  if(b&&nz(b)!=nz(a)&&!nz(b).includes(nz(a))&&((S.k=='baca'&&S.L.id<9)||S.k=='hitung')){const[x,y]=S.k=='hitung'&&!/^dengar/i.test(a)?[b,a]:[a,b],s0=S,i0=S.i;
@@ -313,7 +444,7 @@ function traceQ(q){
  top.onpointermove=e=>{if(!down||done)return;const p=pos(e);ink.strokeStyle='#ff7a1a';ink.lineWidth=IW;[ink,kX].forEach(x=>{x.beginPath();x.moveTo(last[0],last[1]);x.lineTo(p[0],p[1]);x.stroke()});last=p;const n=performance.now();if(n-lt>120){lt=n;chk()}};
  window.__trace={pts,st,r,mark};demoFn=()=>demo(st,hn,side,lw);setTimeout(demoFn,500)}
 function fin(){const st=S.m<=1?3:S.m<=3?2:1;
- P[S.k+'-'+S.L.id]=Math.max(star(S.k,S.L.id),st);sv();say('Ye! Misi selesai. Kamu hebat!');
+ P[S.k+'-'+S.L.id]=Math.max(star(S.k,S.L.id),st);sv();say('Ye! Misi selesai. Kamu hebat!');confetti(70);
  const i=D[S.k].levels.indexOf(S.L);
  app.innerHTML=`<div class="card fin"><div class="big">🚀</div><div style="font-size:56px">${STK[S.k][i]||'🎉'}</div><h1>Misi selesai!</h1><p>${esc(S.L.title)}</p><div class="stars">${'★'.repeat(st)+'☆'.repeat(3-st)}</div><button class="btn" onclick="start('${S.k}',${i})">Main lagi</button><br><button class="mini" style="margin-top:14px" onclick="track('${S.k}')">Kembali ke level</button></div>`}
 try{if('serviceWorker' in navigator&&/^https?:/.test(location.protocol))navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}
