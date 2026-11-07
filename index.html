@@ -301,6 +301,11 @@ input[type=text],select{width:100%;font:inherit;font-size:18px;padding:10px 12px
  #app:has(.grid2) .card{margin:12px 0 0;padding:14px 22px}
  #app:has(.grid2) .top2{flex:none}
 }
+
+/* Ikon gembok tepat di tengah lingkaran */
+.lock,.nd.lk .nb{display:grid;place-items:center;padding:0;line-height:1;text-align:center}
+.lock{font-size:22px}.lock,.nb{font-family:system-ui,'Apple Color Emoji','Segoe UI Emoji',sans-serif}
+@media (min-width:600px){.lock{font-size:30px}}
 </style>
 </head>
 <body>
@@ -364,7 +369,7 @@ function baca(L){const q=[],it=L.items;
  return q}
 function tulis(L){return L.items.flatMap(i=>{
  if(i.word)return[{t:'trace',p:'Tulis kata '+i.word,big:i.emoji||'',say:i.word,keys:[...i.word]}];
- if(i.char){const w=L.id==4?'angka':'huruf';return[{t:'trace',p:'Tulis '+w+' '+i.char,say:w+' '+i.char,hint:i.strokes.map((s,k)=>(k+1)+'. '+s).join('\n'),keys:[i.char]}]}
+ if(i.char){const w=L.id==4?'angka':'huruf';return[{t:'trace',p:'Tulis '+w+' '+i.char,say:w+' '+i.char,hint:i.strokes.map((s,k)=>k?s.charAt(0).toLowerCase()+s.slice(1):s).join(' kemudian '),keys:[i.char]}]}
  if(i.symbol)return[{t:'trace',p:'Tulis '+i.name,say:i.name,hint:i.instruction,keys:[i.id]}];return[]})}
 function hitung(L){const q=[],ds=L.items.map(i=>i.digit!=null?i.digit:i.number).filter(x=>x!=null).map(String),M={kiri:'⬆️ Atas',kanan:'⬇️ Bawah',sama:'🟰 Sama'};
  L.items.forEach(i=>{const t=i.type||'';
@@ -451,7 +456,7 @@ function gate(ok){
  d.innerHTML=`<div class="modal"><h2>🔒 Khusus Orang Tua</h2><p>Jawab dulu:</p><b id="gq" style="display:block;font-size:46px;margin:10px 0;color:var(--tx)"></b><input id="gi" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-label="Jawaban" style="text-align:center;font-size:32px"><div class="rw"><button class="btn" id="gok">Masuk</button></div><div class="rw"><button class="mini" id="gc">Batal</button></div><div class="small" id="gmsg"></div></div>`;
  document.body.appendChild(d);
  const gi=d.querySelector('#gi'),gq=d.querySelector('#gq'),gm_=d.querySelector('#gmsg');
- const nw=()=>{const a=r(5,8),b=r(7,9);s=a*b;gq.textContent=a+' × '+b+' = ?';gi.value=''};nw();
+ const nw=()=>{const a=r(23,89),b=r(12,48);s=a*b;gq.textContent=a+' × '+b+' = ?';gi.value=''};nw();
  const chk=()=>{const v=gi.value.replace(/\D/g,'');if(!v)return;if(+v===s){d.remove();ok()}else{wrong++;gm_.textContent=wrong>=3?'Belum tepat. Silakan minta orang tua yang menjawab.':'Belum tepat, soal diganti.';nw();gi.focus()}};
  d.querySelector('#gok').onclick=chk;gi.onkeydown=e=>{if(e.key=='Enter')chk()};
  d.querySelector('#gc').onclick=()=>d.remove();setTimeout(()=>gi.focus(),50)}
