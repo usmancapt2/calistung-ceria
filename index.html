@@ -195,6 +195,99 @@ input[type=text],select{width:100%;font:inherit;font-size:18px;padding:10px 12px
 .th-tulis .fin p{color:#d9d4ff}.th-tulis .fin .stars{text-shadow:0 0 12px #ffd23f}
 .fin .qd span{font-size:40px}
 @media (prefers-reduced-motion:reduce){.logo span,.nd.cur .nb,.me{animation:none}}
+
+/* ===== RESPONSIF: HP, TABLET & iPAD (potret + lanskap) ===== */
+#app{max-width:none;margin:0;padding:16px max(16px,calc((100% - var(--aw,480px))/2)) 40px}
+.nd{width:var(--nw,104px)}
+.trk.k4{--nw:92px}
+@media (min-width:600px){
+ #app{--aw:720px;padding-top:24px;padding-bottom:56px}
+ h2{font-size:30px}
+ .top2{gap:16px}.ttl{font-size:28px}
+ .avatar{width:78px;height:78px;font-size:48px}
+ .who b{font-size:27px}.who span{font-size:18px}
+ .pill{font-size:24px;padding:8px 20px;border-radius:26px}
+ .lock{width:66px;height:66px;font-size:28px}
+ .back{font-size:22px;padding:12px 22px;border-radius:20px}
+ .hero{font-size:24px;padding:16px 0 6px}.small{font-size:16px}
+ .logo{font-size:70px}
+ .grid2{gap:24px;padding:22px 0}
+ .mb{min-height:220px;font-size:36px;border-radius:52px 32px 52px 32px;gap:12px}
+ .mb:nth-child(2n){border-radius:32px 52px 32px 52px}
+ .mb .ic{width:120px;height:120px;font-size:72px}
+ .wide{font-size:28px;padding:22px;border-radius:34px}
+ .card{padding:26px;border-radius:34px;margin:18px 0}.card h3{font-size:26px}
+ .prog{height:22px;border-radius:12px}
+ .q h2{font-size:34px;margin-inline:44px}
+ .big{font-size:clamp(96px,16vmin,180px);min-height:clamp(110px,18vmin,200px)}
+ .big.story{font-size:30px;line-height:1.6;min-height:0;padding:22px}
+ .say{font-size:26px;min-height:64px;padding:8px 34px;border-radius:24px}
+ .opts{gap:18px}
+ .o{min-height:108px;font-size:42px;border-radius:32px}
+ .opts.n3 .o{font-size:64px;min-height:128px}
+ .opts.n1 .o{font-size:34px}
+ .hint{font-size:25px;padding:12px 18px}
+ .feedback{font-size:30px;min-height:46px}
+ .btn{font-size:30px;padding:16px 44px;border-radius:24px}
+ .mini{font-size:20px;padding:14px 20px;border-radius:18px}
+ .ghost{font-size:22px;padding:10px 24px}
+ .x{width:60px;height:60px;font-size:22px}
+ .pad{max-width:none;width:min(100%,520px,max(260px,calc(100dvh - 500px)))}
+ #pc{font-size:26px!important}
+ .fin{margin-top:60px}.fin .big{font-size:130px}.fin h1{font-size:44px}.stars{font-size:72px}
+ .stk{font-size:46px}
+ .sks{grid-template-columns:repeat(6,1fr);gap:16px}.sk{font-size:52px;border-radius:22px;padding:14px 4px}.sk small{font-size:15px}
+ .seg button{font-size:21px;padding:14px 10px}.field{font-size:19px}
+ input[type=text],select{font-size:22px;padding:14px 16px}
+ .tip{font-size:19px;padding:14px 16px}
+ .days{height:160px}.days div{font-size:15px}
+ .rw{gap:14px}
+ .dlg{max-width:440px;padding:34px;border-radius:34px}
+ .modal{max-width:540px;padding:32px;border-radius:34px}
+ .modal p{font-size:22px}
+ .rest .card{max-width:560px!important}.rest .card p{font-size:24px!important}
+ .opts[style*="repeat(4"]{grid-template-columns:repeat(6,1fr)!important}
+ .opts .o[id^="a"]{font-size:38px!important;min-height:92px!important}
+ #ae{font-size:clamp(90px,14vmin,150px)!important;min-height:clamp(100px,16vmin,170px)!important}
+ /* jalur level */
+ .trk{--rw:52px;--nh:104px;--nw:150px;--sg:calc(var(--nh)/2 + 84px);margin:18px -6px 0;border-radius:44px;border-width:6px;
+  height:max(calc(100dvh - 200px),calc((var(--nh) + 100px)*(var(--rows,3) - 1)/.57));min-height:0;max-height:none}
+ .trk.k4{--rw:44px;--nh:92px;--nw:132px}
+ .trk.k2{--rw:62px;--nh:120px;--nw:170px}
+ .nb{font-size:44px;border-width:7px}.k4 .nb{font-size:40px}.nd.lk .nb{font-size:34px}
+ .ns{font-size:30px;height:34px}
+ .nt{font-size:17px;padding:3px 12px;border-radius:18px}
+ .me{font-size:52px;top:-64px}
+ .sgn{font-size:24px;padding:4px 18px;border-radius:20px}
+ .goal{font-size:84px}.dc{font-size:50px}
+ .qd span{font-size:46px}
+}
+/* Lanskap (iPad / tablet dipegang mendatar) */
+@media (min-width:900px) and (orientation:landscape){
+ #app{--aw:900px}
+ #app:has(.grid2),#app:has(.trk){--aw:1140px}
+ .grid2{grid-template-columns:repeat(4,1fr);gap:22px}
+ .mb{min-height:clamp(220px,34vh,300px);font-size:34px}
+ .mb .ic{width:clamp(96px,16vh,130px);height:clamp(96px,16vh,130px);font-size:clamp(56px,9vh,76px)}
+ .logo{font-size:64px}
+ .opts.n1{grid-template-columns:1fr 1fr}
+ .trk{height:max(calc(100dvh - 190px),640px)}
+ .trk.k3,.trk.k2{--rw:48px;--nh:92px;--nw:150px}
+ .trk.k4,.trk.k5,.trk.k6{--rw:40px;--nh:88px;--nw:132px}
+ .opts[style*="repeat(4"]{grid-template-columns:repeat(9,1fr)!important}
+ .sks{grid-template-columns:repeat(8,1fr)}
+}
+/* Lanskap pendek (mis. iPad mini): rapatkan agar soal muat tanpa banyak gulir */
+@media (min-width:900px) and (orientation:landscape) and (max-height:820px){
+ #app{padding-top:14px;padding-bottom:28px}
+ .q h2{font-size:28px;margin-block:2px 6px}
+ .card{padding:18px;margin:12px 0}
+ .big{font-size:clamp(84px,17vh,130px);min-height:clamp(90px,18vh,140px)}
+ .opts.n3 .o{min-height:104px;font-size:56px}
+ .o{min-height:90px}
+ .say{margin-bottom:10px}
+ .pad{width:min(100%,520px,max(240px,calc(100dvh - 470px)))}
+}
 </style>
 </head>
 <body>
@@ -231,8 +324,16 @@ function say(t,cb){if(MUTE)return;try{speechSynthesis.cancel()}catch(e){}if(AU){
  const play=u=>{if(id!==SQ)return;const a=new Audio(u);AU=a;a.onended=()=>cb&&cb();a.onerror=()=>{BL[k]=0;MISS.add(k);tts(t,cb)};a.play().catch(()=>tts(t,cb))};
  if(BL[k])return play(BL[k]);
  const tr=i=>{if(id!==SQ)return;if(i>1){MISS.add(k);return tts(t,cb)}fetch('suara/'+k+['.mp3','.m4a'][i]).then(r=>{if(!r.ok)throw 0;return r.blob()}).then(b=>{BL[k]=URL.createObjectURL(b);play(BL[k])},()=>tr(i+1))};tr(0)}
+// Perbaikan pelafalan: mesin suara sering membaca huruf "c" seperti "k" (baca -> "baka").
+// Di Bahasa Indonesia huruf "c" bunyinya /tʃ/ ("cha"). Hanya teks yang DIUCAPKAN yang diubah; tulisan di layar tetap.
+const PRON={baca:'bacha',membaca:'membacha',bacaan:'bachaan',dibaca:'dibacha',bacakan:'bachakan'};
+function fixPron(x){
+ return String(x)
+  .replace(/[A-Za-z]+/g,w=>{const l=w.toLowerCase();return PRON[l]?(w[0]==w[0].toUpperCase()?PRON[l][0].toUpperCase()+PRON[l].slice(1):PRON[l]):w})
+  .replace(/c(?=[aeiouAEIOU])/g,'ch').replace(/C(?=[aeiou])/g,'Ch').replace(/C(?=[AEIOU])/g,'CH');
+}
 function tts(t,cb){try{if(!VO)pickVoice();const sp=speechSynthesis;sp.cancel();
- const x=String(t).replace(/\b([Hh]uruf) ([A-Za-z])\b/g,(m,h,c)=>h+' '+LET[c.toUpperCase()]).replace(/…/g,' titik titik ');
+ const x=fixPron(String(t).replace(/\b([Hh]uruf) ([A-Za-z])\b/g,(m,h,c)=>h+' '+LET[c.toUpperCase()]).replace(/…/g,' titik titik '));
  const u=new SpeechSynthesisUtterance(x);u.lang='id-ID';if(VO)u.voice=VO;u.rate=RT;u.pitch=VO?1.1:1.4;if(cb)u.onend=u.onerror=cb;setTimeout(()=>sp.speak(u),60)}catch(e){}}
 
 function baca(L){const q=[],it=L.items;
@@ -359,9 +460,9 @@ const DEC={baca:['🌳','🌷','🍄','🦋','🌻','🐿️','🌲','🐞','�
 function decorate(k,P,n){
  const box=app.querySelector('.trk'),sv=box&&box.querySelector('svg');if(!box)return;
  const W=box.clientWidth,H=box.clientHeight;if(!W||!H)return;
- const rw=(parseFloat(getComputedStyle(box).getPropertyValue('--rw'))||38)/2+6+14,nh=parseFloat(getComputedStyle(box).getPropertyValue('--nh'))||76,rp=[];
+ const rw=(parseFloat(getComputedStyle(box).getPropertyValue('--rw'))||38)/2+6+14,nh=parseFloat(getComputedStyle(box).getPropertyValue('--nh'))||76,hw=(parseFloat(getComputedStyle(box).getPropertyValue('--nw'))||104)/2+4,rp=[];
  sv.querySelectorAll('.rd1').forEach(p=>{const L=p.getTotalLength();for(let t=0;t<=L;t+=.7){const q=p.getPointAtLength(t);rp.push([q.x*W/100,q.y*H/100])}});
- const R=P.map((p,i)=>{const cx=p[0]*W/100,cy=p[1]*H/100,g=i==n;return g?[cx-52,cx+52,cy-52,cy+52]:[cx-56,cx+56,cy-nh/2-(i==0?118:44),cy+nh/2+92]});
+ const R=P.map((p,i)=>{const cx=p[0]*W/100,cy=p[1]*H/100,g=i==n;return g?[cx-nh*.7,cx+nh*.7,cy-nh*.7,cy+nh*.7]:[cx-hw,cx+hw,cy-nh/2-(i==0?118:44)*nh/76,cy+nh/2+92*nh/76]});
  let s=[...k].reduce((a,c)=>(a*31+c.charCodeAt(0))>>>0,7);const rn=()=>(s=(s*1664525+1013904223)>>>0)/4294967296;
  const C=[];for(let x=22;x<W-18;x+=22)for(let y=20;y<H-16;y+=22)C.push([x+(rn()-.5)*16,y+(rn()-.5)*16]);
  C.sort(()=>rn()-.5);const ok=[];
@@ -373,9 +474,10 @@ function decorate(k,P,n){
  box.insertAdjacentHTML('beforeend',ok.map((c,i)=>`<span class="dc" aria-hidden="true" style="left:${(c[0]/W*100).toFixed(2)}%;top:${(c[1]/H*100).toFixed(2)}%;font-size:${24+Math.floor(rn()*12)}px;transform:translate(-50%,-50%) rotate(${Math.round((rn()-.5)*30)}deg)">${DEC[k][i%DEC[k].length]}</span>`).join(''))}
 function qdeco(c,k){const pos=[[7,4],[93,4],[7,96],[93,96],[50,97],[50,3]],d=DEC[k];c.insertAdjacentHTML('beforeend','<div class="qd" aria-hidden="true">'+pos.map((p,i)=>`<span style="left:${p[0]}%;top:${p[1]}%;transform:translate(-50%,-50%) rotate(${(i*37%40)-20}deg)">${d[(i*2)%d.length]}</span>`).join('')+'</div>')}
 new MutationObserver(()=>{const m=/th-(\w+)/.exec(app.className),c=m&&app.querySelector('.card.q,.card.fin');if(c&&DEC[m[1]]&&!c.querySelector('.qd'))qdeco(c,m[1])}).observe(app,{childList:true});
+let TK=null;
 function track(k){
- const ls=D[k].levels,n=ls.length,sl=n+1,cols=sl<=6?2:sl<=9?3:4,rows=Math.ceil(sl/cols),mx=cols==2?27:cols==3?19:13,
- ry=r=>19+57*r/(rows-1),
+ TK=k;const ls=D[k].levels,n=ls.length,sl=n+1,wd=innerWidth>=900&&innerWidth/innerHeight>1.15,cols=wd?(sl<=6?3:sl<=9?5:6):(sl<=6?2:sl<=9?3:4),rows=Math.ceil(sl/cols),mx=cols==2?27:cols==3?19:cols==4?13:cols==5?11:9,
+ tb=innerWidth>=600,ry=r=>(tb?25:19)+(tb?50:57)*r/(rows-1),
  P=[...Array(sl)].map((_,i)=>{const r=Math.floor(i/cols);let c=i%cols;if(r%2)c=cols-1-c;return[mx+(100-2*mx)*c/(cols-1),ry(r)+Math.sin(i*1.9)*2]}),
  open=ls.map((l,i)=>i==0||CF.open||star(k,ls[i-1].id)>0),
  done=ls.filter(l=>star(k,l.id)>0).length,
@@ -387,8 +489,8 @@ function track(k){
  pc=p=>`left:${f(p[0])}%;top:${f(p[1])}%`;
  app.className='th-'+k;
  app.innerHTML=`<div class="top2"><button class="back" onclick="home()">← Beranda</button><b class="ttl">${T[k].e} ${T[k].t}</b><div class="pill">⭐ ${total()}</div></div><div class="prog" aria-label="${done} dari ${n} level selesai"><i style="width:${Math.round(done/n*100)}%"></i></div>
-<div class="trk k${cols}"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${segs.map(s=>`<path class="rd0" d="${s.d}"/>`).join('')}${segs.map(s=>`<path class="rd1${s.dn?' dn':''}" d="${s.d}"/>`).join('')}${segs.map(s=>`<path class="rd2" d="${s.d}"/>`).join('')}</svg>`+
- `<div class="sgn" style="${pc([P[0][0],P[0][1]-17])}">Mulai!</div><div class="goal" aria-hidden="true" style="${pc(P[n])}">${done==n?'🏆':'🏁'}</div>`+
+<div class="trk k${cols}" style="--rows:${rows}"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${segs.map(s=>`<path class="rd0" d="${s.d}"/>`).join('')}${segs.map(s=>`<path class="rd1${s.dn?' dn':''}" d="${s.d}"/>`).join('')}${segs.map(s=>`<path class="rd2" d="${s.d}"/>`).join('')}</svg>`+
+ `<div class="sgn" style="left:${f(P[0][0])}%;top:calc(${f(P[0][1])}% - var(--sg,17%))">Mulai!</div><div class="goal" aria-hidden="true" style="${pc(P[n])}">${done==n?'🏆':'🏁'}</div>`+
  ls.map((l,i)=>{const s=star(k,l.id),o=open[i];return `<div class="nd${o?'':' lk'}${i==cur?' cur':''}" style="${pc(P[i])};--c:${ORB[i%10]}">${i==cur?`<span class="me" aria-hidden="true">${esc(CF.av)}</span>`:''}<button class="nb" ${o?`onclick="start('${k}',${i})"`:`aria-disabled="true" onclick="lk(this)"`} aria-label="Level ${l.id}: ${esc(l.title)}">${o?l.id:'🔒'}</button><div class="ns" aria-hidden="true">${o?'★'.repeat(s)+'☆'.repeat(3-s):''}</div><div class="nt">${esc(l.title)}</div></div>`}).join('')+'</div>';decorate(k,P,n)}
 
 function start(k,i){const L=D[k].levels[i];S={k,L,q:sess(k,L),i:0,m:0};step()}
@@ -421,7 +523,7 @@ function samplePts(S,step){const o=[];S.forEach(st=>{for(let i=0;i<st.length-1;i
 function dseg(p,a,b){const dx=b[0]-a[0],dy=b[1]-a[1],l=dx*dx+dy*dy;let t=l?((p[0]-a[0])*dx+(p[1]-a[1])*dy)/l:0;t=Math.max(0,Math.min(1,t));return Math.hypot(p[0]-a[0]-t*dx,p[1]-a[1]-t*dy)}
 function traceQ(q){
  app.innerHTML=bar()+`<div class="card q"><h2>${esc(q.p)}</h2>${q.big?`<div style="font-size:40px">${esc(q.big)}</div>`:''}${q.hint?`<div class="hint" style="color:var(--mut);margin:0">${esc(q.hint)}</div>`:''}<div class="pad"><canvas id="c0"></canvas><canvas id="c1"></canvas><canvas id="c2"></canvas></div><div id="pc" style="color:#2e9e4f;font-weight:800;font-size:20px">0%</div><div class="feedback" id="fb"></div><button class="say" onclick="say(S.q[S.i].say)">🔊 Dengarkan</button><button class="mini" onclick="demoFn()">👆 Contoh</button> <button class="mini" onclick="step()">Ulangi</button></div>`;
- say(q.p+'. '+(q.hint||'').replace(/\n/g,'. '));const side=Math.floor(document.querySelector('.pad').clientWidth),dpr=window.devicePixelRatio||1;
+ say(q.p+'. '+(q.hint||'').replace(/\n/g,'. '));const side=Math.floor(document.querySelector('.pad').clientWidth),dpr=window.devicePixelRatio||1;document.querySelector('.pad').dataset.side=side;
  const cx=['c0','c1','c2'].map(id=>{const c=document.getElementById(id);c.width=c.height=side*dpr;const x=c.getContext('2d');x.scale(dpr,dpr);x.lineCap=x.lineJoin='round';return x});
  const[g,ink,hn]=cx,top=hn.canvas,{S:st,sc}=layout(q.keys,side),lw=Math.min(sc*.16,side*.12),r=Math.max(lw*.6,12)*(S.L.age[0]=='4'?1.2:1),pts=samplePts(st,lw*.5);
  g.strokeStyle='rgba(80,60,160,.13)';g.lineWidth=lw;st.forEach(s=>{g.beginPath();s.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1]));g.stroke()});
@@ -449,6 +551,16 @@ function fin(){const st=S.m<=1?3:S.m<=3?2:1;
  app.innerHTML=`<div class="card fin"><div class="big">🚀</div><div style="font-size:56px">${STK[S.k][i]||'🎉'}</div><h1>Misi selesai!</h1><p>${esc(S.L.title)}</p><div class="stars">${'★'.repeat(st)+'☆'.repeat(3-st)}</div><button class="btn" onclick="start('${S.k}',${i})">Main lagi</button><br><button class="mini" style="margin-top:14px" onclick="track('${S.k}')">Kembali ke level</button></div>`}
 try{if('serviceWorker' in navigator&&/^https?:/.test(location.protocol))navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}
 home();
+
+// Menyesuaikan tampilan saat tablet diputar (potret <-> lanskap)
+let RZT;
+function onResize(){clearTimeout(RZT);RZT=setTimeout(()=>{try{
+ if(inP||document.getElementById('ov')||document.querySelector('.rest,.ovl'))return;
+ if(document.querySelector('.trk')&&TK){track(TK);return}
+ const p=document.querySelector('.pad');
+ if(p&&p.dataset.side&&Math.abs(p.clientWidth/+p.dataset.side-1)>.12)step();
+}catch(e){}},300)}
+addEventListener('resize',onResize);addEventListener('orientationchange',onResize);
 </script>
 </body>
 </html>
