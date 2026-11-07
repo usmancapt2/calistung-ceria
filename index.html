@@ -288,6 +288,19 @@ input[type=text],select{width:100%;font:inherit;font-size:18px;padding:10px 12px
  .say{margin-bottom:10px}
  .pad{width:min(100%,520px,max(240px,calc(100dvh - 470px)))}
 }
+
+/* ===== Beranda lanskap: pas satu layar tanpa gulir ===== */
+@media (min-width:900px) and (orientation:landscape){
+ #app:has(.grid2){height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:0;display:flex;flex-direction:column;padding-top:12px;padding-bottom:12px}
+ #app:has(.grid2) .hero{padding:4px 0 0;font-size:20px}
+ #app:has(.grid2) .logo{font-size:clamp(44px,8vh,64px)}
+ #app:has(.grid2) .grid2{flex:1 1 0;min-height:0;grid-template-rows:minmax(0,1fr);align-content:center;gap:20px;padding:10px 0}
+ #app:has(.grid2) .mb{min-height:0;height:100%;max-height:440px;align-self:center;font-size:clamp(26px,4.4vh,36px)}
+ #app:has(.grid2) .mb .ic{width:clamp(70px,15vh,120px);height:clamp(70px,15vh,120px);font-size:clamp(42px,8.5vh,72px)}
+ #app:has(.grid2) .wide{padding:clamp(10px,2vh,20px);font-size:clamp(20px,3.2vh,28px)}
+ #app:has(.grid2) .card{margin:12px 0 0;padding:14px 22px}
+ #app:has(.grid2) .top2{flex:none}
+}
 </style>
 </head>
 <body>
@@ -432,9 +445,16 @@ const AS=()=>Object.keys(STK).flatMap(k=>STK[k].map((e,i)=>({e,k,l:D[k].levels[i
 const AV=['🐯','🐘','🐒','🦒','🐢','🐞','🦋','🐸'];
 setInterval(()=>{if(document.hidden||inP||RS)return;const k=dk();CF.daily[k]=(CF.daily[k]||0)+1;if(++SS%10==0)svc();if(SS>=CF.limit*60)rest()},1000);
 function rest(){RS=true;svc();const d=document.createElement('div');d.className='rest';d.innerHTML=`<div class="card" style="max-width:380px"><div style="font-size:80px">😴🌙</div><h2>Waktunya istirahat!</h2><p style="font-size:18px">Hebat! Kamu sudah belajar ${CF.limit} menit. Yuk lihat jauh, minum air, dan main di luar.</p><p class="small">Minta orang tua untuk membuka lagi.</p><button class="btn" id="rp">🔒 Orang tua</button></div>`;document.body.appendChild(d);say('Waktunya istirahat ya');d.querySelector('#rp').onclick=()=>gate(()=>{SS=0;RS=false;d.remove();home()})}
-function gate(ok){const r=n=>Math.floor(Math.random()*n),a=3+r(7),b=3+r(7),s=a+b,o=shuf(uniq([s,s+1+r(3),Math.max(2,s-1-r(3)),s+4]).slice(0,3)),d=document.createElement('div');d.className='ovl';
- d.innerHTML=`<div class="modal"><h2>🔒 Khusus Orang Tua</h2><p>Jawab dulu: <b style="font-size:26px;color:var(--tx)">${a} + ${b} = ?</b></p><div class="rw">${o.map(x=>`<button class="btn" data-a="${x}">${x}</button>`).join('')}</div><div class="rw"><button class="mini" id="gc">Batal</button></div><div class="small" id="gmsg"></div></div>`;document.body.appendChild(d);
- d.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{if(+b.dataset.a===s){d.remove();ok()}else{d.querySelector('#gmsg').textContent='Belum tepat, coba lagi.';b.disabled=true;b.style.opacity=.3}});d.querySelector('#gc').onclick=()=>d.remove()}
+function gate(ok){
+ // Gerbang orang tua: perkalian besar, jawaban diketik (tidak bisa ditebak dari pilihan). Soal diganti tiap salah.
+ const r=(x,y)=>x+Math.floor(Math.random()*(y-x+1)),d=document.createElement('div');let s=0,wrong=0;d.className='ovl';
+ d.innerHTML=`<div class="modal"><h2>🔒 Khusus Orang Tua</h2><p>Jawab dulu:</p><b id="gq" style="display:block;font-size:46px;margin:10px 0;color:var(--tx)"></b><input id="gi" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-label="Jawaban" style="text-align:center;font-size:32px"><div class="rw"><button class="btn" id="gok">Masuk</button></div><div class="rw"><button class="mini" id="gc">Batal</button></div><div class="small" id="gmsg"></div></div>`;
+ document.body.appendChild(d);
+ const gi=d.querySelector('#gi'),gq=d.querySelector('#gq'),gm_=d.querySelector('#gmsg');
+ const nw=()=>{const a=r(5,8),b=r(7,9);s=a*b;gq.textContent=a+' × '+b+' = ?';gi.value=''};nw();
+ const chk=()=>{const v=gi.value.replace(/\D/g,'');if(!v)return;if(+v===s){d.remove();ok()}else{wrong++;gm_.textContent=wrong>=3?'Belum tepat. Silakan minta orang tua yang menjawab.':'Belum tepat, soal diganti.';nw();gi.focus()}};
+ d.querySelector('#gok').onclick=chk;gi.onkeydown=e=>{if(e.key=='Enter')chk()};
+ d.querySelector('#gc').onclick=()=>d.remove();setTimeout(()=>gi.focus(),50)}
 function gm(k){const g=GM.find(x=>x[0]==k);say(g[2]);k=='abc'?abc():track(k)}
 function home(){app.className='';inP=false;const m=Math.floor((CF.daily[dk()]||0)/60),n=AS().filter(x=>star(x.k,x.l.id)).length;
  app.innerHTML=`<div class="top2"><div class="avatar">${esc(CF.av)}</div><div class="who"><b>Halo, ${esc(CF.name)}!</b><span>Ayo belajar sambil bermain</span></div><div class="pill">⭐ ${total()}</div><button class="lock" aria-label="Area orang tua" onclick="gate(parent)">🔒</button></div><div class="hero"><div class="logo" aria-label="Calistung Ceria">${[...'Calistung'].map((c,i)=>`<span style="color:${ORB[i]};--i:${i}">${c}</span>`).join('')}</div>Ceria 🌈<br><span class="small">Baca Tulis & Hitung</span></div><div class="grid2">${GM.map(g=>`<button class="mb ${g[3]}" onclick="gm('${g[0]}')"><span class="ic">${g[1]}</span>${g[2]}</button>`).join('')}</div><button class="wide" onclick="stk()">🏆 Stiker Saya (${n}/${AS().length})</button><div class="card"><b>Waktu main hari ini:</b> ${m} menit dari batas ${CF.limit} menit<div class="prog"><i style="width:${Math.min(100,m/CF.limit*100)}%"></i></div></div><span class="cld" aria-hidden="true" style="top:6px;right:-12px">☁️</span><span class="cld" aria-hidden="true" style="top:150px;left:-18px;font-size:48px">☁️</span><span class="deco" aria-hidden="true" style="bottom:10px;left:8px">🌷</span><span class="deco" aria-hidden="true" style="bottom:6px;right:10px">🦋</span>`}
@@ -523,7 +543,10 @@ function samplePts(S,step){const o=[];S.forEach(st=>{for(let i=0;i<st.length-1;i
 function dseg(p,a,b){const dx=b[0]-a[0],dy=b[1]-a[1],l=dx*dx+dy*dy;let t=l?((p[0]-a[0])*dx+(p[1]-a[1])*dy)/l:0;t=Math.max(0,Math.min(1,t));return Math.hypot(p[0]-a[0]-t*dx,p[1]-a[1]-t*dy)}
 function traceQ(q){
  app.innerHTML=bar()+`<div class="card q"><h2>${esc(q.p)}</h2>${q.big?`<div style="font-size:40px">${esc(q.big)}</div>`:''}${q.hint?`<div class="hint" style="color:var(--mut);margin:0">${esc(q.hint)}</div>`:''}<div class="pad"><canvas id="c0"></canvas><canvas id="c1"></canvas><canvas id="c2"></canvas></div><div id="pc" style="color:#2e9e4f;font-weight:800;font-size:20px">0%</div><div class="feedback" id="fb"></div><button class="say" onclick="say(S.q[S.i].say)">🔊 Dengarkan</button><button class="mini" onclick="demoFn()">👆 Contoh</button> <button class="mini" onclick="step()">Ulangi</button></div>`;
- say(q.p+'. '+(q.hint||'').replace(/\n/g,'. '));const side=Math.floor(document.querySelector('.pad').clientWidth),dpr=window.devicePixelRatio||1;document.querySelector('.pad').dataset.side=side;
+ if(S.L.id>=2){const parts=[q.p,...(q.hint||'').split('\n').map(x=>x.trim()).filter(Boolean)],s0=S,i0=S.i;
+  // Level 2 ke atas: soal dan deskripsi dibacakan terpisah dengan jeda
+  const go=j=>{if(j>=parts.length)return;say(parts[j],()=>{const sid=SQ;setTimeout(()=>{if(S===s0&&S.i===i0&&SQ===sid)go(j+1)},800)})};go(0)}
+  else say(q.p+'. '+(q.hint||'').replace(/\n/g,'. '));const side=Math.floor(document.querySelector('.pad').clientWidth),dpr=window.devicePixelRatio||1;document.querySelector('.pad').dataset.side=side;
  const cx=['c0','c1','c2'].map(id=>{const c=document.getElementById(id);c.width=c.height=side*dpr;const x=c.getContext('2d');x.scale(dpr,dpr);x.lineCap=x.lineJoin='round';return x});
  const[g,ink,hn]=cx,top=hn.canvas,{S:st,sc}=layout(q.keys,side),lw=Math.min(sc*.16,side*.12),r=Math.max(lw*.6,12)*(S.L.age[0]=='4'?1.2:1),pts=samplePts(st,lw*.5);
  g.strokeStyle='rgba(80,60,160,.13)';g.lineWidth=lw;st.forEach(s=>{g.beginPath();s.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1]));g.stroke()});
